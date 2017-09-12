@@ -1,6 +1,6 @@
 {
   "name": "webhd-node-api-rest",
-  "version": "0.0.5",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
