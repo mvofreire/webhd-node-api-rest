@@ -15,7 +15,7 @@ gulp.task('src', function(){
         plugins: ["transform-class-properties"]
     }))
     //.pipe(uglify())
-    .pipe(concat('main.js'))
+    //.pipe(concat('main.js'))
     .pipe(gulp.dest(paths.dist))
 })
 
