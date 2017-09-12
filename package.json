@@ -1,6 +1,6 @@
 {
   "name": "webhd-node-api-rest",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,12 +17,13 @@
   },
   "homepage": "https://github.com/mvofreire/webhd-node-api-rest#readme",
   "dependencies": {
+    "app-root-path": "^2.0.1",
+    "import-dir": "0.0.1",
     "koa": "^2.3.0",
     "koa-json": "^2.0.2",
     "koa-router": "^7.2.1",
     "mysql2": "^1.4.2",
-    "sequelize": "^4.8.3",
-    "app-root-path": "^2.0.1"
+    "sequelize": "^4.8.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
