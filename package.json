@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/mvofreire/webhd-node-api-rest#readme",
   "dependencies": {
+    "koa": "^2.3.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.2.1",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.8.3",
     "app-root-path": "^2.0.1"
   },
   "devDependencies": {

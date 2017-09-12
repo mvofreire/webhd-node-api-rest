@@ -2,6 +2,7 @@ import DbConnection from './db'
 import ApiRoutes  from './routes'
 import _defaultConfig from './default-config'
 import Koa from 'koa'
+import json from 'koa-json'
 
 const ApiRest = {
     init(config) {
@@ -10,6 +11,9 @@ const ApiRest = {
 
         //init db connection
         DbConnection.init(_config.db)
+
+        //json
+        app.use(json())
 
         //register routes
         app.use(ApiRoutes.registerRoutes())
