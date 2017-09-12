@@ -1,7 +1,7 @@
-const compose = require('koa-compose')
-const Router = require('koa-router')
-const rootPath = require('app-root-path')
-const importDir = require('import-dir')
+import compose from 'koa-compose'
+import Router from 'koa-router'
+import rootPath from 'app-root-path'
+import importDir from 'import-dir'
 
 const ApiRoutes = {
     registerRoutes() {
@@ -32,4 +32,4 @@ const ApiRoutes = {
     }
 }
 
-module.exports = ApiRoutes
+export default ApiRoutes

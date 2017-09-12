@@ -1,6 +1,223 @@
-"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(exports,"__esModule",{value:!0});var _createClass=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),Controller=function(){function e(t,n){_classCallCheck(this,e)}return _createClass(e,[{key:"_registerDefaultRoutes",value:function(){this._defaultRoutes.map(function(e){console.log(e)})}}]),e}();exports.default=Controller;
-"use strict";var Sequelize=require("sequelize"),DbConnection={_instance:null,init:function(e){this._instance=new Sequelize(e.database,e.username,e.password,e.options),this._instance.authenticate().then(function(){console.log("Connection has been established successfully.")}).catch(function(e){console.error("Unable to connect to the database:",e)})},instance:function(){return this._instance}};module.exports=DbConnection;
-"use strict";module.exports={server:{port:5e3},db:{database:null,username:"root",password:"",options:{host:"localhost",dialect:"mysql",pool:{max:5,min:0,idle:1e4}}}};
-"use strict";var DbConnection=require("./db"),ApiRoutes=require("./routes"),_defaultConfig=require("./default-config"),Koa=require("koa"),ApiRest={init:function(e){var o=Object.assign({},_defaultConfig,e),t=new Koa;DbConnection.init(o.db),t.use(ApiRoutes.registerRoutes()),console.log("server listenig on port localhost:"+o.server.port),t.listen(o.server.port)}};module.exports=ApiRest;
-"use strict";function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}var _sequelize=require("sequelize"),_sequelize2=_interopRequireDefault(_sequelize),_db=require("./db"),_db2=_interopRequireDefault(_db),Model={_instance:null,define:function(e){return this._instance=_db2.default.instance().define(e.table,e.attributes),this._instance.sync(),this._instance.bind(e.methods),this._instance}};module.exports=Model;
-"use strict";function _toConsumableArray(r){if(Array.isArray(r)){for(var e=0,o=Array(r.length);e<r.length;e++)o[e]=r[e];return o}return Array.from(r)}var compose=require("koa-compose"),Router=require("koa-router"),rootPath=require("app-root-path"),importDir=require("import-dir"),ApiRoutes={registerRoutes:function(){var r=[{folder:rootPath+"/controllers",prefix:"/api"}].reduce(function(r,e){var o=importDir(e.folder),t=new Router({prefix:e.prefix});return Object.keys(o).map(function(r){var e=new o[r](t);Object.keys(e).map(function(r){if(-1==r.indexOf("_")){var o=r.split("$")[0],i=r.split("$")[1];t[o]("/"+i,e[r])}})}),[t.routes(),t.allowedMethods()].concat(_toConsumableArray(r))},[]);return compose(r)}};module.exports=ApiRoutes;
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Controller = function () {
+    function Controller(route, Model) {
+        _classCallCheck(this, Controller);
+
+        this._model = null;
+        this._route = null;
+        this._defaultRoutes = [{
+            method: 'GET',
+            endPoint: '/'
+        }];
+
+
+        this._model = Model;
+        this._route = route;
+
+        this._registerDefaultRoutes(Model);
+    }
+
+    _createClass(Controller, [{
+        key: '_registerDefaultRoutes',
+        value: function _registerDefaultRoutes() {
+            this._defaultRoutes.map(function (_defaultRoute) {
+                console.log(_defaultRoute);
+            });
+        }
+    }]);
+
+    return Controller;
+}();
+
+exports.default = Controller;
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _sequelize = require('sequelize');
+
+var _sequelize2 = _interopRequireDefault(_sequelize);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DbConnection = {
+    _instance: null,
+
+    init: function init(config) {
+        this._instance = new _sequelize2.default(config.database, config.username, config.password, config.options);
+        this._instance.authenticate().then(function () {
+            console.log('Connection has been established successfully.');
+        }).catch(function (err) {
+            console.error('Unable to connect to the database:', err);
+        });
+    },
+    instance: function instance() {
+        return this._instance;
+    }
+};
+
+exports.default = DbConnection;
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    server: {
+        port: 5000
+    },
+    db: {
+        database: null,
+        username: 'root',
+        password: '',
+
+        options: {
+            host: 'localhost',
+            dialect: 'mysql',
+
+            pool: {
+                max: 5,
+                min: 0,
+                idle: 10000
+            }
+
+            // SQLite only
+            //storage: 'path/to/database.sqlite'
+        }
+    }
+};
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+        value: true
+});
+
+var _db = require('./db');
+
+var _db2 = _interopRequireDefault(_db);
+
+var _routes = require('./routes');
+
+var _routes2 = _interopRequireDefault(_routes);
+
+var _defaultConfig2 = require('./default-config');
+
+var _defaultConfig3 = _interopRequireDefault(_defaultConfig2);
+
+var _koa = require('koa');
+
+var _koa2 = _interopRequireDefault(_koa);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ApiRest = {
+        init: function init(config) {
+                var _config = Object.assign({}, _defaultConfig3.default, config);
+                var app = new _koa2.default();
+
+                //init db connection
+                _db2.default.init(_config.db);
+
+                //register routes
+                app.use(_routes2.default.registerRoutes());
+
+                console.log('server listenig on port localhost:' + _config.server.port);
+                app.listen(_config.server.port);
+        }
+};
+
+exports.default = ApiRest;
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _sequelize = require('sequelize');
+
+var _sequelize2 = _interopRequireDefault(_sequelize);
+
+var _db = require('./db');
+
+var _db2 = _interopRequireDefault(_db);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Model = {
+    _instance: null,
+
+    define: function define(model) {
+        this._instance = _db2.default.instance().define(model.table, model.attributes);
+        this._instance.sync();
+        this._instance.bind(model.methods);
+        return this._instance;
+    }
+};
+
+exports.default = Model;
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _koaCompose = require('koa-compose');
+
+var _koaCompose2 = _interopRequireDefault(_koaCompose);
+
+var _koaRouter = require('koa-router');
+
+var _koaRouter2 = _interopRequireDefault(_koaRouter);
+
+var _appRootPath = require('app-root-path');
+
+var _appRootPath2 = _interopRequireDefault(_appRootPath);
+
+var _importDir = require('import-dir');
+
+var _importDir2 = _interopRequireDefault(_importDir);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var ApiRoutes = {
+    registerRoutes: function registerRoutes() {
+
+        var routerConfigs = [{ folder: _appRootPath2.default + '/controllers', prefix: '/api' }];
+        var composed = routerConfigs.reduce(function (prev, curr) {
+
+            var routes = (0, _importDir2.default)(curr.folder);
+            var router = new _koaRouter2.default({ prefix: curr.prefix });
+
+            Object.keys(routes).map(function (name) {
+
+                var ctrl = new routes[name](router);
+                Object.keys(ctrl).map(function (methodName) {
+                    if (methodName.indexOf('_') == -1) {
+                        var type = methodName.split('$')[0];
+                        var _name = methodName.split('$')[1];
+
+                        router[type]('/' + _name, ctrl[methodName]);
+                    }
+                });
+            });
+
+            return [router.routes(), router.allowedMethods()].concat(_toConsumableArray(prev));
+        }, []);
+        return (0, _koaCompose2.default)(composed);
+    }
+};
+
+exports.default = ApiRoutes;

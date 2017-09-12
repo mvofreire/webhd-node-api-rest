@@ -11,9 +11,10 @@ const paths = {
 gulp.task('src', function(){
     gulp.src(paths.src)
     .pipe(babel({
-        presets: ['env']
+        presets: ['env'],
+        plugins: ["transform-class-properties"]
     }))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(concat('main.js'))
     .pipe(gulp.dest(paths.dist))
 })

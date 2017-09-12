@@ -1,7 +1,7 @@
-const DbConnection = require( './db')
-const ApiRoutes  = require('./routes')
-const _defaultConfig = require('./default-config')
-const Koa = require('koa')
+import DbConnection from './db'
+import ApiRoutes  from './routes'
+import _defaultConfig from './default-config'
+import Koa from 'koa'
 
 const ApiRest = {
     init(config) {
@@ -19,4 +19,4 @@ const ApiRest = {
     }
 }
 
-module.exports = ApiRest
+export default ApiRest

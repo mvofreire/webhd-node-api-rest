@@ -1,10 +1,9 @@
-const Sequelize = require('sequelize')
+import Sequelize from 'sequelize'
 
 const DbConnection = {
-    _instance:null,
+    _instance: null,
 
-    init(config)
-    {
+    init(config) {
         this._instance = new Sequelize(config.database, config.username, config.password, config.options)
         this._instance.authenticate().then(() => {
             console.log('Connection has been established successfully.');
@@ -13,9 +12,9 @@ const DbConnection = {
         });
     },
 
-    instance(){
+    instance() {
         return this._instance;
     }
 }
 
-module.exports = DbConnection
+export default DbConnection

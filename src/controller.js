@@ -1,22 +1,22 @@
 
 class Controller {
 
-    // _model = null
-    //_route = null
+    _model = null;
+    _route = null;
 
-    // _defaultRoutes = [
-    //     {
-    //         method: 'GET',
-    //         endPoint: '/'
-    //     }
-    // ]
+    _defaultRoutes = [
+        {
+            method: 'GET',
+            endPoint: '/'
+        }
+    ]
 
     constructor(route, Model) {
 
-        //this._model = Model
-        //this._route = route
+        this._model = Model
+        this._route = route
 
-        //this._registerDefaultRoutes(Model)
+        this._registerDefaultRoutes(Model)
     }
 
     _registerDefaultRoutes(){
