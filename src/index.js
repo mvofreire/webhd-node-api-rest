@@ -4,11 +4,7 @@ import _defaultConfig from './default-config'
 import Koa from 'koa'
 import json from 'koa-json'
 
-import compose from 'koa-compose'
-import convert from 'koa-convert'
-import logger from 'koa-logger'
-import cors from 'koa-cors'
-import bodyParser from 'koa-bodyparser'
+import middleware from './middleware'
 
 const ApiRest = {
     init(config) {
@@ -18,15 +14,7 @@ const ApiRest = {
         //init db connection
         DbConnection.init(_config.db)
 
-        //json
-        app.use(json())
-
-        //json
-        app.use(compose([
-            logger(),
-            convert(cors()),
-            convert(bodyParser()),
-        ]))
+        app.use(middleware())
 
         //register routes
         app.use(ApiRoutes.registerRoutes())
