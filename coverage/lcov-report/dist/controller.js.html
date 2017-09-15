@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dist/controller.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">dist</a> controller.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.22% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/89</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.24% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.76% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.68% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/62</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+&nbsp;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; <span class="missing-if-branch" title="else path not taken" >E</span>if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { <span class="missing-if-branch" title="else path not taken" >E</span>if (protoProps) defineProperties(Constructor.prototype, protoProps); <span class="missing-if-branch" title="if path not taken" >I</span>if (staticProps) <span class="cstat-no" title="statement not covered" >defineProperties(Constructor, staticProps); </span>return Constructor; }; }();
+&nbsp;
+function <span class="fstat-no" title="function not covered" >_asyncToGenerator(</span>fn) { <span class="cstat-no" title="statement not covered" >return <span class="fstat-no" title="function not covered" >fu</span>nction () { var gen = <span class="cstat-no" title="statement not covered" >fn.apply(this, arguments);</span> <span class="cstat-no" title="statement not covered" >return new Promise(<span class="fstat-no" title="function not covered" >fu</span>nction (resolve, reject) { function <span class="fstat-no" title="function not covered" >step(</span>key, arg) { <span class="cstat-no" title="statement not covered" >try { var info = <span class="cstat-no" title="statement not covered" >gen[key](arg);</span> var value = <span class="cstat-no" title="statement not covered" >info.value;</span> } catch (error) { <span class="cstat-no" title="statement not covered" >reject(error); <span class="cstat-no" title="statement not covered" ></span>return; </span>} <span class="cstat-no" title="statement not covered" ></span>if (info.done) { <span class="cstat-no" title="statement not covered" >resolve(value); </span>} else { <span class="cstat-no" title="statement not covered" >return Promise.resolve(value).then(<span class="fstat-no" title="function not covered" >fu</span>nction (value) { <span class="cstat-no" title="statement not covered" >step("next", value); </span>}, <span class="fstat-no" title="function not covered" >fu</span>nction (err) { <span class="cstat-no" title="statement not covered" >step("throw", err); </span>}); </span>} </span>} <span class="cstat-no" title="statement not covered" >return step("next"); </span>}); </span>}; </span>}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >_classCallCheck(</span>instance, Constructor) { <span class="cstat-no" title="statement not covered" >if (!(instance instanceof Constructor)) { <span class="cstat-no" title="statement not covered" >throw new TypeError("Cannot call a class as a function"); </span>} </span>}
+&nbsp;
+var Controller = function () {
+    function <span class="fstat-no" title="function not covered" >Controller(</span>route, Model) {
+        var _this = <span class="cstat-no" title="statement not covered" >this;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        _classCallCheck(this, Controller);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._model = null;</span>
+<span class="cstat-no" title="statement not covered" >        this._route = null;</span>
+<span class="cstat-no" title="statement not covered" >        this._defaultRoutes = [{</span>
+            method: 'get',
+            endPoint: '/{nameModel}',
+            action: <span class="fstat-no" title="function not covered" >fu</span>nction () {
+                var _ref = <span class="cstat-no" title="statement not covered" >_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function <span class="fstat-no" title="function not covered" >_callee(</span>ctx) {</span>
+<span class="cstat-no" title="statement not covered" >                    return regeneratorRuntime.wrap(function <span class="fstat-no" title="function not covered" >_callee$(</span>_context) {</span>
+<span class="cstat-no" title="statement not covered" >                        while (1) {</span>
+<span class="cstat-no" title="statement not covered" >                            switch (_context.prev = _context.next) {</span>
+                                case 0:
+<span class="cstat-no" title="statement not covered" >                                    ctx.body = 'get teste';</span>
+&nbsp;
+                                case 1:
+                                case 'end':
+<span class="cstat-no" title="statement not covered" >                                    return _context.stop();</span>
+                            }
+                        }
+                    }, _callee, _this);
+                }));
+&nbsp;
+                function <span class="fstat-no" title="function not covered" >action(</span>_x) {
+<span class="cstat-no" title="statement not covered" >                    return _ref.apply(this, arguments);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return action;</span>
+            }()
+        }, {
+            method: 'get',
+            endPoint: '/{nameModel}/:id',
+            action: <span class="fstat-no" title="function not covered" >fu</span>nction () {
+                var _ref2 = <span class="cstat-no" title="statement not covered" >_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function <span class="fstat-no" title="function not covered" >_callee2(</span>ctx) {</span>
+<span class="cstat-no" title="statement not covered" >                    return regeneratorRuntime.wrap(function <span class="fstat-no" title="function not covered" >_callee2$(</span>_context2) {</span>
+<span class="cstat-no" title="statement not covered" >                        while (1) {</span>
+<span class="cstat-no" title="statement not covered" >                            switch (_context2.prev = _context2.next) {</span>
+                                case 0:
+<span class="cstat-no" title="statement not covered" >                                    ctx.body = 'get teste id';</span>
+&nbsp;
+                                case 1:
+                                case 'end':
+<span class="cstat-no" title="statement not covered" >                                    return _context2.stop();</span>
+                            }
+                        }
+                    }, _callee2, _this);
+                }));
+&nbsp;
+                function <span class="fstat-no" title="function not covered" >action(</span>_x2) {
+<span class="cstat-no" title="statement not covered" >                    return _ref2.apply(this, arguments);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return action;</span>
+            }()
+        }, {
+            method: 'post',
+            endPoint: '/{nameModel}',
+            action: <span class="fstat-no" title="function not covered" >fu</span>nction () {
+                var _ref3 = <span class="cstat-no" title="statement not covered" >_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function <span class="fstat-no" title="function not covered" >_callee3(</span>ctx) {</span>
+<span class="cstat-no" title="statement not covered" >                    return regeneratorRuntime.wrap(function <span class="fstat-no" title="function not covered" >_callee3$(</span>_context3) {</span>
+<span class="cstat-no" title="statement not covered" >                        while (1) {</span>
+<span class="cstat-no" title="statement not covered" >                            switch (_context3.prev = _context3.next) {</span>
+                                case 0:
+<span class="cstat-no" title="statement not covered" >                                    ctx.body = 'post teste';</span>
+&nbsp;
+                                case 1:
+                                case 'end':
+<span class="cstat-no" title="statement not covered" >                                    return _context3.stop();</span>
+                            }
+                        }
+                    }, _callee3, _this);
+                }));
+&nbsp;
+                function <span class="fstat-no" title="function not covered" >action(</span>_x3) {
+<span class="cstat-no" title="statement not covered" >                    return _ref3.apply(this, arguments);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return action;</span>
+            }()
+        }, {
+            method: 'put',
+            endPoint: '/{nameModel}',
+            action: <span class="fstat-no" title="function not covered" >fu</span>nction () {
+                var _ref4 = <span class="cstat-no" title="statement not covered" >_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function <span class="fstat-no" title="function not covered" >_callee4(</span>ctx) {</span>
+<span class="cstat-no" title="statement not covered" >                    return regeneratorRuntime.wrap(function <span class="fstat-no" title="function not covered" >_callee4$(</span>_context4) {</span>
+<span class="cstat-no" title="statement not covered" >                        while (1) {</span>
+<span class="cstat-no" title="statement not covered" >                            switch (_context4.prev = _context4.next) {</span>
+                                case 0:
+<span class="cstat-no" title="statement not covered" >                                    ctx.body = 'put teste';</span>
+&nbsp;
+                                case 1:
+                                case 'end':
+<span class="cstat-no" title="statement not covered" >                                    return _context4.stop();</span>
+                            }
+                        }
+                    }, _callee4, _this);
+                }));
+&nbsp;
+                function <span class="fstat-no" title="function not covered" >action(</span>_x4) {
+<span class="cstat-no" title="statement not covered" >                    return _ref4.apply(this, arguments);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return action;</span>
+            }()
+        }, {
+            method: 'delete',
+            endPoint: '/{nameModel}',
+            action: <span class="fstat-no" title="function not covered" >fu</span>nction () {
+                var _ref5 = <span class="cstat-no" title="statement not covered" >_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function <span class="fstat-no" title="function not covered" >_callee5(</span>ctx) {</span>
+<span class="cstat-no" title="statement not covered" >                    return regeneratorRuntime.wrap(function <span class="fstat-no" title="function not covered" >_callee5$(</span>_context5) {</span>
+<span class="cstat-no" title="statement not covered" >                        while (1) {</span>
+<span class="cstat-no" title="statement not covered" >                            switch (_context5.prev = _context5.next) {</span>
+                                case 0:
+<span class="cstat-no" title="statement not covered" >                                    ctx.body = 'delete teste';</span>
+&nbsp;
+                                case 1:
+                                case 'end':
+<span class="cstat-no" title="statement not covered" >                                    return _context5.stop();</span>
+                            }
+                        }
+                    }, _callee5, _this);
+                }));
+&nbsp;
+                function <span class="fstat-no" title="function not covered" >action(</span>_x5) {
+<span class="cstat-no" title="statement not covered" >                    return _ref5.apply(this, arguments);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return action;</span>
+            }()
+        }];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._route = route;</span>
+<span class="cstat-no" title="statement not covered" >        if (Model) {</span>
+<span class="cstat-no" title="statement not covered" >            this._model = Model;</span>
+<span class="cstat-no" title="statement not covered" >            this._registerDefaultRoutes(Model);</span>
+        }
+    }
+&nbsp;
+    _createClass(Controller, [{
+        key: '_registerDefaultRoutes',
+        value: function <span class="fstat-no" title="function not covered" >_registerDefaultRoutes(</span>model) {
+            var _this2 = <span class="cstat-no" title="statement not covered" >this;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this._defaultRoutes.map(<span class="fstat-no" title="function not covered" >fu</span>nction (_defaultRoute) {</span>
+                var methodName = <span class="cstat-no" title="statement not covered" >_defaultRoute.endPoint.replace('{nameModel}', model.Model.getTableName());</span>
+<span class="cstat-no" title="statement not covered" >                console.log('add route default ' + model.Model.getTableName());</span>
+<span class="cstat-no" title="statement not covered" >                _this2._route[_defaultRoute.method](methodName, _defaultRoute.action);</span>
+            });
+        }
+    }]);
+&nbsp;
+    return Controller;
+}();
+&nbsp;
+exports.default = Controller;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Sep 15 2017 10:05:22 GMT-0300 (Hora oficial do Brasil)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>
