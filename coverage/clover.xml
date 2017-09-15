@@ -1,32 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1505473082306" clover="3.2.0">
-  <project timestamp="1505473082306" name="All files">
-    <metrics statements="22" coveredstatements="6" conditionals="10" coveredconditionals="5" methods="13" coveredmethods="4" elements="45" coveredelements="15" complexity="0" loc="22" ncloc="22" packages="1" files="1" classes="1">
-      <file name="controller.js" path="C:\ProjetosPrivados\webhd-node-api-rest\dist\controller.js">
-        <metrics statements="22" coveredstatements="6" conditionals="10" coveredconditionals="5" methods="13" coveredmethods="4"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="7" count="1" type="cond" truecount="5" falsecount="3"/>
-        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
-      </file>
+<coverage generated="1505475320762" clover="3.2.0">
+  <project timestamp="1505475320762" name="All files">
+    <metrics statements="63" coveredstatements="6" conditionals="29" coveredconditionals="5" methods="35" coveredmethods="4" elements="127" coveredelements="15" complexity="0" loc="63" ncloc="63" packages="2" files="2" classes="2">
+      <package name="dist">
+        <metrics statements="62" coveredstatements="6" conditionals="29" coveredconditionals="5" methods="34" coveredmethods="4"/>
+        <file name="controller.js" path="C:\ProjetosPrivados\webhd-node-api-rest\dist\controller.js">
+          <metrics statements="62" coveredstatements="6" conditionals="29" coveredconditionals="5" methods="34" coveredmethods="4"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="7" count="1" type="cond" truecount="5" falsecount="3"/>
+          <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="cond" truecount="0" falsecount="3"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="50" count="0" type="stmt"/>
+          <line num="51" count="0" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="53" count="0" type="cond" truecount="0" falsecount="3"/>
+          <line num="55" count="0" type="stmt"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="66" count="0" type="stmt"/>
+          <line num="69" count="0" type="stmt"/>
+          <line num="75" count="0" type="stmt"/>
+          <line num="76" count="0" type="stmt"/>
+          <line num="77" count="0" type="stmt"/>
+          <line num="78" count="0" type="cond" truecount="0" falsecount="3"/>
+          <line num="80" count="0" type="stmt"/>
+          <line num="84" count="0" type="stmt"/>
+          <line num="91" count="0" type="stmt"/>
+          <line num="94" count="0" type="stmt"/>
+          <line num="100" count="0" type="stmt"/>
+          <line num="101" count="0" type="stmt"/>
+          <line num="102" count="0" type="stmt"/>
+          <line num="103" count="0" type="cond" truecount="0" falsecount="3"/>
+          <line num="105" count="0" type="stmt"/>
+          <line num="109" count="0" type="stmt"/>
+          <line num="116" count="0" type="stmt"/>
+          <line num="119" count="0" type="stmt"/>
+          <line num="125" count="0" type="stmt"/>
+          <line num="126" count="0" type="stmt"/>
+          <line num="127" count="0" type="stmt"/>
+          <line num="128" count="0" type="cond" truecount="0" falsecount="3"/>
+          <line num="130" count="0" type="stmt"/>
+          <line num="134" count="0" type="stmt"/>
+          <line num="141" count="0" type="stmt"/>
+          <line num="144" count="0" type="stmt"/>
+          <line num="148" count="0" type="stmt"/>
+          <line num="149" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="150" count="0" type="stmt"/>
+          <line num="151" count="0" type="stmt"/>
+          <line num="155" count="1" type="stmt"/>
+          <line num="158" count="0" type="stmt"/>
+          <line num="160" count="0" type="stmt"/>
+          <line num="161" count="0" type="stmt"/>
+          <line num="162" count="0" type="stmt"/>
+          <line num="163" count="0" type="stmt"/>
+          <line num="168" count="1" type="stmt"/>
+          <line num="171" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="test.controller">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="testController.js" path="C:\ProjetosPrivados\webhd-node-api-rest\test\controller\testController.js">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="6" count="0" type="stmt"/>
+        </file>
+      </package>
     </metrics>
   </project>
 </coverage>

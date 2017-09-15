@@ -145,11 +145,11 @@ var Controller = function () {
             }()
         }];
 
-        console.log('constructor controller');
-        this._model = Model;
         this._route = route;
-
-        if (Model) this._registerDefaultRoutes(Model);
+        if (Model) {
+            this._model = Model;
+            this._registerDefaultRoutes(Model);
+        }
     }
 
     _createClass(Controller, [{
@@ -158,8 +158,8 @@ var Controller = function () {
             var _this2 = this;
 
             this._defaultRoutes.map(function (_defaultRoute) {
-                var methodName = _defaultRoute.endPoint.replace('{nameModel}', model.table);
-                console.log('add route default ' + methodName);
+                var methodName = _defaultRoute.endPoint.replace('{nameModel}', model.Model.getTableName());
+                console.log('add route default ' + model.Model.getTableName());
                 _this2._route[_defaultRoute.method](methodName, _defaultRoute.action);
             });
         }
