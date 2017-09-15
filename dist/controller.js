@@ -148,7 +148,7 @@ var Controller = function () {
         this._route = route;
         if (Model) {
             this._model = Model;
-            this._registerDefaultRoutes(Model);
+            this._registerDefaultRoutes(this._model);
         }
     }
 
@@ -158,8 +158,7 @@ var Controller = function () {
             var _this2 = this;
 
             this._defaultRoutes.map(function (_defaultRoute) {
-                var methodName = _defaultRoute.endPoint.replace('{nameModel}', model.Model.getTableName());
-                console.log('add route default ' + model.Model.getTableName());
+                var methodName = _defaultRoute.endPoint.replace('{nameModel}', model.name);
                 _this2._route[_defaultRoute.method](methodName, _defaultRoute.action);
             });
         }
