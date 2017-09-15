@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.Sequelize = undefined;
 
 var _sequelize = require('sequelize');
 
@@ -26,3 +27,4 @@ var Model = {
 };
 
 exports.default = Model;
+exports.Sequelize = _sequelize2.default;

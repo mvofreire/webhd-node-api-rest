@@ -20,6 +20,10 @@ var _koa = require('koa');
 
 var _koa2 = _interopRequireDefault(_koa);
 
+var _koaJson = require('koa-json');
+
+var _koaJson2 = _interopRequireDefault(_koaJson);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ApiRest = {
@@ -29,6 +33,9 @@ var ApiRest = {
 
                 //init db connection
                 _db2.default.init(_config.db);
+
+                //json
+                app.use((0, _koaJson2.default)());
 
                 //register routes
                 app.use(_routes2.default.registerRoutes());
