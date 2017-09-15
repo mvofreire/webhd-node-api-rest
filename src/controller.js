@@ -16,22 +16,25 @@ class Controller {
             method: 'get',
             endPoint: '/{nameModel}/:id',
             action: async (ctx) => {
-                ctx.body = await this._model.findOne().then(r=>r);
+                const {id} = ctx.params
+                ctx.body = await this._model.findOne({id:id}).then(r=>r);
             }
         },
         {
             method: 'post',
             endPoint: '/{nameModel}',
             action: async (ctx) => {
-                console.log(ctx.request);
-                ctx.body = await this._model.create(ctx.request).then(x=>x);
+                ctx.body = await this._model.create(ctx.request.body).then(x=>x);
             }
         },
         {
             method: 'put',
             endPoint: '/{nameModel}',
             action: async (ctx) => {
-                ctx.body = 'put teste';
+                const {id} = ctx.params
+                const model = this._model.findOne({id:id}).then(r=>r)
+                if(!model.isNewRecord)
+                    ctx.body = await model.update(ctx.request.body).then(up=>up)
             }
         },
         {

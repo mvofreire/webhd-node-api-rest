@@ -54,19 +54,21 @@ var Controller = function () {
             endPoint: '/{nameModel}/:id',
             action: function () {
                 var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(ctx) {
+                    var id;
                     return regeneratorRuntime.wrap(function _callee2$(_context2) {
                         while (1) {
                             switch (_context2.prev = _context2.next) {
                                 case 0:
-                                    _context2.next = 2;
-                                    return _this._model.findOne().then(function (r) {
+                                    id = ctx.params.id;
+                                    _context2.next = 3;
+                                    return _this._model.findOne({ id: id }).then(function (r) {
                                         return r;
                                     });
 
-                                case 2:
+                                case 3:
                                     ctx.body = _context2.sent;
 
-                                case 3:
+                                case 4:
                                 case 'end':
                                     return _context2.stop();
                             }
@@ -89,16 +91,15 @@ var Controller = function () {
                         while (1) {
                             switch (_context3.prev = _context3.next) {
                                 case 0:
-                                    console.log(ctx.request);
-                                    _context3.next = 3;
-                                    return _this._model.create(ctx.request).then(function (x) {
+                                    _context3.next = 2;
+                                    return _this._model.create(ctx.request.body).then(function (x) {
                                         return x;
                                     });
 
-                                case 3:
+                                case 2:
                                     ctx.body = _context3.sent;
 
-                                case 4:
+                                case 3:
                                 case 'end':
                                     return _context3.stop();
                             }
@@ -117,13 +118,30 @@ var Controller = function () {
             endPoint: '/{nameModel}',
             action: function () {
                 var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(ctx) {
+                    var id, model;
                     return regeneratorRuntime.wrap(function _callee4$(_context4) {
                         while (1) {
                             switch (_context4.prev = _context4.next) {
                                 case 0:
-                                    ctx.body = 'put teste';
+                                    id = ctx.params.id;
+                                    model = _this._model.findOne({ id: id }).then(function (r) {
+                                        return r;
+                                    });
 
-                                case 1:
+                                    if (model.isNewRecord) {
+                                        _context4.next = 6;
+                                        break;
+                                    }
+
+                                    _context4.next = 5;
+                                    return model.update(ctx.request.body).then(function (up) {
+                                        return up;
+                                    });
+
+                                case 5:
+                                    ctx.body = _context4.sent;
+
+                                case 6:
                                 case 'end':
                                     return _context4.stop();
                             }
