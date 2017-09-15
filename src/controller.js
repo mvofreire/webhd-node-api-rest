@@ -23,7 +23,8 @@ class Controller {
             method: 'post',
             endPoint: '/{nameModel}',
             action: async (ctx) => {
-                ctx.body = 'post teste';
+                console.log(ctx.request);
+                ctx.body = await this._model.create(ctx.request).then(x=>x);
             }
         },
         {

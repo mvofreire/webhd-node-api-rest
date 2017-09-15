@@ -89,9 +89,16 @@ var Controller = function () {
                         while (1) {
                             switch (_context3.prev = _context3.next) {
                                 case 0:
-                                    ctx.body = 'post teste';
+                                    console.log(ctx.request);
+                                    _context3.next = 3;
+                                    return _this._model.create(ctx.request).then(function (x) {
+                                        return x;
+                                    });
 
-                                case 1:
+                                case 3:
+                                    ctx.body = _context3.sent;
+
+                                case 4:
                                 case 'end':
                                     return _context3.stop();
                             }
