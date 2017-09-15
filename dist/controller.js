@@ -154,11 +154,11 @@ var Controller = function () {
 
     _createClass(Controller, [{
         key: '_registerDefaultRoutes',
-        value: function _registerDefaultRoutes() {
+        value: function _registerDefaultRoutes(model) {
             var _this2 = this;
 
             this._defaultRoutes.map(function (_defaultRoute) {
-                var methodName = _defaultRoute.endPoint.replace('{nameModel}', _this2._model.table);
+                var methodName = _defaultRoute.endPoint.replace('{nameModel}', model.table);
                 console.log('add route default ' + methodName);
                 _this2._route[_defaultRoute.method](methodName, _defaultRoute.action);
             });
