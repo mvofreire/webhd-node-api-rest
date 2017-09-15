@@ -61,7 +61,7 @@ var Controller = function () {
                                 case 0:
                                     id = ctx.params.id;
                                     _context2.next = 3;
-                                    return _this._model.findOne(id).then(function (r) {
+                                    return _this._model.findById(id).then(function (r) {
                                         return r;
                                     });
 
@@ -124,12 +124,12 @@ var Controller = function () {
                             switch (_context4.prev = _context4.next) {
                                 case 0:
                                     id = ctx.params.id;
-                                    model = _this._model.findOne(id).then(function (r) {
+                                    model = _this._model.findById(id).then(function (r) {
                                         return r;
                                     });
 
                                     if (model.isNewRecord) {
-                                        _context4.next = 6;
+                                        _context4.next = 8;
                                         break;
                                     }
 
@@ -140,8 +140,13 @@ var Controller = function () {
 
                                 case 5:
                                     ctx.body = _context4.sent;
+                                    _context4.next = 9;
+                                    break;
 
-                                case 6:
+                                case 8:
+                                    ctx.status = 404;
+
+                                case 9:
                                 case 'end':
                                     return _context4.stop();
                             }
@@ -160,13 +165,35 @@ var Controller = function () {
             endPoint: '/{nameModel}',
             action: function () {
                 var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(ctx) {
+                    var id, model;
                     return regeneratorRuntime.wrap(function _callee5$(_context5) {
                         while (1) {
                             switch (_context5.prev = _context5.next) {
                                 case 0:
-                                    ctx.body = 'delete teste';
+                                    id = ctx.params.id;
+                                    model = _this._model.findById(id).then(function (r) {
+                                        return r;
+                                    });
 
-                                case 1:
+                                    if (model.isNewRecord) {
+                                        _context5.next = 8;
+                                        break;
+                                    }
+
+                                    _context5.next = 5;
+                                    return model.destroy(ctx.request.body).then(function (d) {
+                                        return d;
+                                    });
+
+                                case 5:
+                                    ctx.body = _context5.sent;
+                                    _context5.next = 9;
+                                    break;
+
+                                case 8:
+                                    ctx.status = 404;
+
+                                case 9:
                                 case 'end':
                                     return _context5.stop();
                             }
