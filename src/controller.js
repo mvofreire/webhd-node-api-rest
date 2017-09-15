@@ -47,13 +47,14 @@ class Controller {
         this._model = Model
         this._route = route
 
-        this._registerDefaultRoutes(Model)
+        if(Model)
+            this._registerDefaultRoutes(Model)
     }
 
     _registerDefaultRoutes(){
         this._defaultRoutes.map((_defaultRoute) => {
-            const methodName = _defaultRoute.endPoint.replace('{nameModel}', _model.table);
-            _route[_defaultRoute.method](methodName, _defaultRoute.action);
+            const methodName = _defaultRoute.endPoint.replace('{nameModel}', this._model.table);
+            this._route[_defaultRoute.method](methodName, _defaultRoute.action);
         })
     }
 }

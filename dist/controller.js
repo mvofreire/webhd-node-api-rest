@@ -50,15 +50,17 @@ var Controller = function () {
         this._model = Model;
         this._route = route;
 
-        this._registerDefaultRoutes(Model);
+        if (Model) this._registerDefaultRoutes(Model);
     }
 
     _createClass(Controller, [{
         key: '_registerDefaultRoutes',
         value: function _registerDefaultRoutes() {
+            var _this = this;
+
             this._defaultRoutes.map(function (_defaultRoute) {
-                var methodName = _defaultRoute.endPoint.replace('{nameModel}', _model.table);
-                _route[_defaultRoute.method](methodName, _defaultRoute.action);
+                var methodName = _defaultRoute.endPoint.replace('{nameModel}', _this._model.table);
+                _this._route[_defaultRoute.method](methodName, _defaultRoute.action);
             });
         }
     }]);
