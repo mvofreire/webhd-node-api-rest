@@ -23,9 +23,6 @@ var _koaBodyparser2 = _interopRequireDefault(_koaBodyparser);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import logger from 'koa-logger'
 function middleware() {
-    return (0, _koaCompose2.default)([
-    //logger(),
-    (0, _koaConvert2.default)((0, _koaCors2.default)()), (0, _koaConvert2.default)((0, _koaBodyparser2.default)())]);
+    return (0, _koaCompose2.default)([(0, _koaConvert2.default)((0, _koaCors2.default)()), (0, _koaConvert2.default)((0, _koaBodyparser2.default)())]);
 }
