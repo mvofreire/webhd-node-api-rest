@@ -61,7 +61,7 @@ var Controller = function () {
                                 case 0:
                                     id = ctx.params.id;
                                     _context2.next = 3;
-                                    return _this._model.findOne({ id: id }).then(function (r) {
+                                    return _this._model.findOne(id).then(function (r) {
                                         return r;
                                     });
 
@@ -124,7 +124,7 @@ var Controller = function () {
                             switch (_context4.prev = _context4.next) {
                                 case 0:
                                     id = ctx.params.id;
-                                    model = _this._model.findOne({ id: id }).then(function (r) {
+                                    model = _this._model.findOne(id).then(function (r) {
                                         return r;
                                     });
 

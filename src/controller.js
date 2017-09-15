@@ -17,7 +17,7 @@ class Controller {
             endPoint: '/{nameModel}/:id',
             action: async (ctx) => {
                 const {id} = ctx.params
-                ctx.body = await this._model.findOne({id:id}).then(r=>r);
+                ctx.body = await this._model.findOne(id).then(r=>r);
             }
         },
         {
@@ -32,7 +32,7 @@ class Controller {
             endPoint: '/{nameModel}',
             action: async (ctx) => {
                 const {id} = ctx.params
-                const model = this._model.findOne({id:id}).then(r=>r)
+                const model = this._model.findOne(id).then(r=>r)
                 if(!model.isNewRecord)
                     ctx.body = await model.update(ctx.request.body).then(up=>up)
             }
