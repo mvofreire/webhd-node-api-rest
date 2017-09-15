@@ -8,42 +8,42 @@ class Controller {
         {
             method: 'get',
             endPoint: '/{nameModel}',
-            action: (ctx) => {
+            action: async (ctx) => {
                 ctx.body = 'get teste';
             }
         },
         {
             method: 'get',
             endPoint: '/{nameModel}/:id',
-            action: (ctx) => {
+            action: async (ctx) => {
                 ctx.body = 'get teste id';
             }
         },
         {
             method: 'post',
             endPoint: '/{nameModel}',
-            action: (ctx) => {
+            action: async (ctx) => {
                 ctx.body = 'post teste';
             }
         },
         {
             method: 'put',
             endPoint: '/{nameModel}',
-            action: (ctx) => {
+            action: async (ctx) => {
                 ctx.body = 'put teste';
             }
         },
         {
             method: 'delete',
             endPoint: '/{nameModel}',
-            action: (ctx) => {
+            action: async (ctx) => {
                 ctx.body = 'delete teste';
             }
         }
     ]
 
     constructor(route, Model) {
-
+        console.log('constructor controller');
         this._model = Model
         this._route = route
 
@@ -54,6 +54,7 @@ class Controller {
     _registerDefaultRoutes(){
         this._defaultRoutes.map((_defaultRoute) => {
             const methodName = _defaultRoute.endPoint.replace('{nameModel}', this._model.table);
+            console.log('add route default '+methodName);
             this._route[_defaultRoute.method](methodName, _defaultRoute.action);
         })
     }
