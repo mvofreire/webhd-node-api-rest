@@ -26,3 +26,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function middleware() {
     return (0, _koaCompose2.default)([(0, _koaConvert2.default)((0, _koaCors2.default)()), (0, _koaConvert2.default)((0, _koaBodyparser2.default)())]);
 }
+//import json from 'koa-json'

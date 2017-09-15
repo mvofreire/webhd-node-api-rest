@@ -1,8 +1,9 @@
+import 'babel-polyfill'
+
 import DbConnection from './db'
 import ApiRoutes  from './routes'
 import _defaultConfig from './default-config'
 import Koa from 'koa'
-import json from 'koa-json'
 
 import middleware from './middleware'
 
