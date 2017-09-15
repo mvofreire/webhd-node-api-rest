@@ -1,11 +1,21 @@
 {
     "presets": [
-        "env"
+        "es2015",
+        "stage-0",
+        [
+            "env",
+            {
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ]
     ],
     "plugins": [
         "transform-async-to-generator",
         [
-            "module-alias", [
+            "module-alias",
+            [
                 {
                     "src": "./",
                     "expose": "app"
