@@ -1,4 +1,4 @@
-import Controller from 'webhd-node-api-rest/dist/controller'
+import Controller from '../../dist/controller'
 
 class TestController extends Controller
 {

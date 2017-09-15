@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-jest": "^21.0.2",
+    "babel-plugin-module-alias": "^1.6.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.2",
@@ -36,6 +38,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "jest": "^21.1.0",
-    "regenerator-runtime": "^0.11.0"
+    "regenerator-runtime": "^0.11.0",
+    "sequelize": "^4.8.4",
+    "sqlite3": "^3.1.11"
   }
 }

@@ -1,5 +1,24 @@
 {
     "presets": [
         "env"
+    ],
+    "plugins": [
+        "transform-async-to-generator",
+        [
+            "module-alias", [
+                {
+                    "src": "./",
+                    "expose": "app"
+                },
+                {
+                    "src": "./models",
+                    "expose": "models"
+                },
+                {
+                    "src": "./controllers",
+                    "expose": "controllers"
+                }
+            ]
+        ]
     ]
 }

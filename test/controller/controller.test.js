@@ -1,7 +1,7 @@
 'use strict'
-const expect = require('chai').expect
-const controller = require('./testController')
+import { expect } from 'chai'
+import testController from './testController'
 
 test('Controller should be a function', () => {
-  expect(controller).to.be.a('function')
+  expect(testController).to.be.a('object')
 })

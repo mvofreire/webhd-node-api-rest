@@ -19,9 +19,12 @@ var Model = {
     _instance: null,
 
     define: function define(model) {
-        this._instance = _db2.default.instance().define(model.table, model.attributes);
+
+        this._instance = _db2.default.instance().define(model.table, model.attributes, {
+            instanceMethods: model.methods
+        });
+
         this._instance.sync();
-        this._instance.bind(model.methods);
         return this._instance;
     }
 };
