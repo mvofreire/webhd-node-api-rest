@@ -27,9 +27,15 @@ var Controller = function () {
                         while (1) {
                             switch (_context.prev = _context.next) {
                                 case 0:
-                                    ctx.body = 'get teste';
+                                    _context.next = 2;
+                                    return _this._model.findAll().then(function (rs) {
+                                        return rs;
+                                    });
 
-                                case 1:
+                                case 2:
+                                    ctx.body = _context.sent;
+
+                                case 3:
                                 case 'end':
                                     return _context.stop();
                             }
@@ -52,9 +58,15 @@ var Controller = function () {
                         while (1) {
                             switch (_context2.prev = _context2.next) {
                                 case 0:
-                                    ctx.body = 'get teste id';
+                                    _context2.next = 2;
+                                    return _this._model.findOne().then(function (r) {
+                                        return r;
+                                    });
 
-                                case 1:
+                                case 2:
+                                    ctx.body = _context2.sent;
+
+                                case 3:
                                 case 'end':
                                     return _context2.stop();
                             }
@@ -159,7 +171,7 @@ var Controller = function () {
 
             this._defaultRoutes.map(function (_defaultRoute) {
                 var methodName = _defaultRoute.endPoint.replace('{nameModel}', model.name);
-                _this2._route[_defaultRoute.method](methodName, _defaultRoute.action);
+                _this2._route[_defaultRoute.method](methodName, _defaultRoute.action.bind(_this2));
             });
         }
     }]);

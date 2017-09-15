@@ -9,14 +9,14 @@ class Controller {
             method: 'get',
             endPoint: '/{nameModel}',
             action: async (ctx) => {
-                ctx.body = 'get teste';
+                ctx.body = await this._model.findAll().then(rs=>rs);
             }
         },
         {
             method: 'get',
             endPoint: '/{nameModel}/:id',
             action: async (ctx) => {
-                ctx.body = 'get teste id';
+                ctx.body = await this._model.findOne().then(r=>r);
             }
         },
         {
@@ -54,7 +54,7 @@ class Controller {
     _registerDefaultRoutes(model){
         this._defaultRoutes.map((_defaultRoute) => {
             const methodName = _defaultRoute.endPoint.replace('{nameModel}', model.name);
-            this._route[_defaultRoute.method](methodName, _defaultRoute.action);
+            this._route[_defaultRoute.method](methodName, _defaultRoute.action.bind(this));
         })
     }
 }
