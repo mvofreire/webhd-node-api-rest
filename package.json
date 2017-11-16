@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "dev:watch":"gulp",
+    "build":"gulp src"
   },
   "repository": {
     "type": "git",
